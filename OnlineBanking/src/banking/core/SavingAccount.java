@@ -1,0 +1,88 @@
+package banking.core;
+
+public class SavingAccount extends Account {
+	
+	private double interestRate = 0.15;
+	
+	public SavingAccount(int accountNumber) {
+		
+		super(accountNumber);
+	}
+	
+	public double applyInterest(double amount) {
+		
+		double totalAmount = amount + (amount * interestRate);
+		
+		return totalAmount;
+	}
+	
+	void withdraw(double amount) {
+		
+		
+		double balance = getBalance() - amount;
+		if (amount == 0) {
+			
+			System.out.println("The withdraw should be more than null");
+		}
+		
+		else if (amount>(getBalance())) {
+			
+			System.out.println("Not enough funds in your account");
+		}
+		
+		else if (amount < (getBalance())) {
+			
+			setTotalBalance(balance);
+			
+			
+			if (balance< 100) {
+				
+				System.out.println("You will loose the interest privileges from your account");
+			
+			}
+			
+			else {
+				balance = applyInterest(balance);
+				
+				setTotalBalance(balance);
+				
+			}
+			
+			System.out.println("Your new balance is " + getBalance());
+		}
+		
+		
+	}
+	
+	void deposit (double amount) {
+			
+			
+			if (amount == 0) {
+				
+				System.out.println("The deposit should be more than null");
+			}
+			
+			else {
+				double balance = getBalance() + amount;
+				
+
+				if (balance< 100) {
+					
+					setTotalBalance(balance);
+				
+				}
+				
+				else {
+					balance = applyInterest(balance);
+					
+					setTotalBalance(balance);
+					
+				}
+				
+				System.out.println("Your new balance is " + getBalance());
+			}
+			
+			
+		}
+
+}
