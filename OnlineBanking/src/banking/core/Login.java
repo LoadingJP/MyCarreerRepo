@@ -27,6 +27,9 @@ public class Login {
 		while(true){
 			
 			for (int i = 65; i <=90; i++) {
+				/* Using the ASCII value to convert number to character and 
+				checking thus using type casting and checking if the ppassword string contains the 
+				capital from A to Z*/
 				
 				char c = (char)i;
 				
