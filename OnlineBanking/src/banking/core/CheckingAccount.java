@@ -3,7 +3,7 @@ package banking.core;
 
 public class CheckingAccount extends Account{
 	private  double Maintenence_Fee = 15.50;
-	
+	private  double checkingBalance;
 	
 	public CheckingAccount(int accountNumber) {
 		super(accountNumber);
@@ -22,10 +22,20 @@ public class CheckingAccount extends Account{
 		return amount - Maintenence_Fee;
 		
 	}
+	
+	
+
+	
+	public double getCheckingBalance() {
+		return checkingBalance;
+	}
 
 
 
-	@Override
+	public void setCheckingBalance(double checkingBalance) {
+		this.checkingBalance = checkingBalance;
+	}
+
 	void deposit (double amount) {
 		
 
@@ -35,7 +45,7 @@ public class CheckingAccount extends Account{
 		}
 		
 		else {
-			double balance = getBalance() + amount;
+			double balance = getCheckingBalance() + amount;
 			setTotalBalance(balance);
 			
 			if (balance < 100) {
@@ -53,7 +63,6 @@ public class CheckingAccount extends Account{
 		
 	}
 	
-	
 	void withdraw(double amount) {
 		
 
@@ -62,14 +71,14 @@ public class CheckingAccount extends Account{
 			System.out.println("The withdraw should be more than null");
 		}
 		
-		else if (amount>(getBalance() + Maintenence_Fee)) {
+		else if (amount>(getCheckingBalance() + Maintenence_Fee)) {
 			
 			System.out.println("Not enough funds in your account");
 		}
 		
-		else if (amount < getBalance()) {
+		else if (amount < getCheckingBalance()) {
 			
-			double balance = getBalance() - amount;
+			double balance = getCheckingBalance() - amount;
 			
 			if (balance < 100) {
 				

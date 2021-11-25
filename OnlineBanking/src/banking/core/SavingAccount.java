@@ -3,6 +3,7 @@ package banking.core;
 public class SavingAccount extends Account{
 	
 	private double interestRate = 0.15;
+	private double savingBalance;
 	
 	private double savingBalance;
 	
@@ -26,6 +27,15 @@ public class SavingAccount extends Account{
 		return totalAmount;
 	}
 	
+	
+	public double getSavingBalance() {
+		return savingBalance;
+	}
+
+	public void setSavingBalance(double savingBalance) {
+		this.savingBalance = savingBalance;
+	}
+
 	void withdraw(double amount) {
 		
 		
