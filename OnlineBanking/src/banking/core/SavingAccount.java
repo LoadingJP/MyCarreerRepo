@@ -1,6 +1,6 @@
 package banking.core;
 
-public class SavingAccount extends Account {
+public class SavingAccount extends Account{
 	
 	private double interestRate = 0.15;
 	
@@ -42,7 +42,7 @@ public class SavingAccount extends Account {
 		
 		else if (amount < (getSavingBalance())) {
 			
-			setTotalBalance(balance);
+			setSavingBalance(balance);
 			
 			
 			if (balance< 100) {
@@ -54,7 +54,7 @@ public class SavingAccount extends Account {
 			else {
 				balance = applyInterest(balance);
 				
-				setTotalBalance(balance);
+				setSavingBalance(balance);
 				
 			}
 			
@@ -78,14 +78,14 @@ public class SavingAccount extends Account {
 
 				if (balance< 100) {
 					
-					setTotalBalance(balance);
+					setSavingBalance(balance);
 				
 				}
 				
 				else {
 					balance = applyInterest(balance);
 					
-					setTotalBalance(balance);
+					setSavingBalance(balance);
 					
 				}
 				
