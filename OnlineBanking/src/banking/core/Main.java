@@ -1,4 +1,4 @@
-package banking.core;
+ package banking.core;
 import java.util.Scanner;
 
 public class Main {

@@ -4,6 +4,16 @@ public class SavingAccount extends Account {
 	
 	private double interestRate = 0.15;
 	
+	private double savingBalance;
+	
+	public double getSavingBalance() {
+		return savingBalance;
+	}
+
+	public void setSavingBalance(double savingBalance) {
+		this.savingBalance = savingBalance;
+	}
+
 	public SavingAccount(int accountNumber) {
 		
 		super(accountNumber);
@@ -19,18 +29,18 @@ public class SavingAccount extends Account {
 	void withdraw(double amount) {
 		
 		
-		double balance = getBalance() - amount;
+		double balance = getSavingBalance() - amount;
 		if (amount == 0) {
 			
 			System.out.println("The withdraw should be more than null");
 		}
 		
-		else if (amount>(getBalance())) {
+		else if (amount>(getSavingBalance())) {
 			
 			System.out.println("Not enough funds in your account");
 		}
 		
-		else if (amount < (getBalance())) {
+		else if (amount < (getSavingBalance())) {
 			
 			setTotalBalance(balance);
 			
@@ -48,7 +58,7 @@ public class SavingAccount extends Account {
 				
 			}
 			
-			System.out.println("Your new balance is " + getBalance());
+			System.out.println("Your new balance is " + getSavingBalance());
 		}
 		
 		
@@ -63,7 +73,7 @@ public class SavingAccount extends Account {
 			}
 			
 			else {
-				double balance = getBalance() + amount;
+				double balance = getSavingBalance() + amount;
 				
 
 				if (balance< 100) {
@@ -79,7 +89,7 @@ public class SavingAccount extends Account {
 					
 				}
 				
-				System.out.println("Your new balance is " + getBalance());
+				System.out.println("Your new balance is " + getSavingBalance());
 			}
 			
 			
